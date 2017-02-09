@@ -18,5 +18,9 @@ $('#peopleModule').find('ul').delegate('i.del', 'click', function(e) {
 
   $remove.remove();
 
-  people.splice(i,1);  
+  people.splice(i,1);
+  var data = {
+    people: people,
+  };
+  $('#peopleModule').find('ul').html(Mustache.render(template,data));
 });
